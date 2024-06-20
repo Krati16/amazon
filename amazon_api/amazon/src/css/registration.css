@@ -1,0 +1,74 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#form-main-container {
+  height: 100vh;
+  background-color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#form-container {
+  max-width: 600px;
+  max-height: 500px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+#form-container .header-form {
+  font-size: 30px;
+  color: gray;
+  text-align: center;
+
+}
+
+#form-container .form {
+  margin-top: 25px;
+}
+
+.input-box {
+  margin-top: 5px;
+}
+
+.form :where(.input-box input) {
+  width: 100%;
+  margin-top: 12px;
+  height: 20px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 10px;
+
+}
+
+.input-box label {
+  color: gray;
+  margin-top: 15px;
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+}

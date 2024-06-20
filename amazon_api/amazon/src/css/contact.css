@@ -1,0 +1,128 @@
+
+img{
+    width: 100%;
+    margin-left: 0px;
+    position: relative;
+    z-index: 1;
+}
+#livechat{
+    margin-left: 20px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color: lightslategrey;
+    align-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+}
+#contactcard{
+    display: flex;
+}
+#lightingspeed{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color:lightslategrey;
+    align-content: center;
+    padding: 15px;
+}
+#contactus{
+    position: absolute;
+    z-index: 2;
+    margin-left: 650px;
+    margin-top: 450px;
+    color: black;
+    background-color: darkolivegreen;
+}
+#support{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color:lightslategrey;
+    align-content: center;
+    padding: 15px;
+}
+h2{
+    color: black;
+    margin: 15px;
+}
+.img5{align-items: center;
+    height: 100px;
+    width:auto;
+    padding-left: 160px;
+
+}
+.img6{align-items: center;
+    height: 100px;
+    width:auto;
+    padding-left: 160px;
+
+}
+
+.img7{align-items: center;
+    height: 100px;
+    width:auto;
+    padding-left: 160px;
+
+}
+@media (max-width:700px) {
+    
+img{
+    width: 100%;
+    margin-left: 0px;
+    position: relative;
+    z-index: 1;
+}
+#contactus{
+    position: absolute;
+    z-index: 2;
+    margin-left: 50%;
+    margin-top: 450px;
+    color: black;
+    background-color: darkolivegreen;
+}
+#contactcard{
+    display:inline;
+}
+#lightingspeed{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color:lightslategrey;
+    align-content: center;
+    padding: 15px;
+    position: relative;
+}
+#livechat{
+    margin-left: 10px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color: lightslategrey;
+    align-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    position: relative;
+}
+#support{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 400px;
+    width:450px;
+    font-size: 20px;
+    background-color:lightslategrey;
+    align-content: center;
+    padding: 15px;
+    position: relative;
+}
+
+}
+
