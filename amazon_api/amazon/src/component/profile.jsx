@@ -2,12 +2,14 @@ import { useEffect ,useState} from "react"
 import axios from "axios"
 import '../css/profile.css'
 const Profile = ()=>{
+    const [path,getpath] = useState('http://localhost:8585/');
     const userId = localStorage.getItem('id')
     const [firstname,getfirstname] = useState('');
     const [lastname,getlastname] = useState('');
     const [phoneno,getphoneno] = useState('');
     const [email,getemail] = useState('');
     const [image,getimage] = useState('');
+    
     useEffect(()=>{
         getSingleuserData();
     })
@@ -17,7 +19,7 @@ const Profile = ()=>{
             getlastname(response.data.message.lastname)
             getphoneno(response.data.message.phoneno)
             getemail(response.data.message.email)
-            // getimage(response.file.path.image)
+        
         })
     }
     return(
@@ -39,17 +41,14 @@ const Profile = ()=>{
                  <th>Email</th>
                  <th>{email}</th>
                  </tr>
-                 <tr>
-                 <th>Photo</th>
-                 <th>{image}</th>
-                 </tr>
+    
                  <tr>
                  <th>Action</th>
                  <th><input type='button' value="Delete" />
                     <input type='button' value="Edit" />
                 </th>
                </tr>
-               
+    
                </table>
        </>
    )

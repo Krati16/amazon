@@ -3,18 +3,9 @@ import axios from 'axios';
 import '../css/registration.css';
 import { useEffect, useState } from 'react';
 const Registration = (data)=>{
-  const [image, setImage] = useState({ preview: '', data: '' })
+  const [image, setImage ,getimage] = useState({ preview: '', data: '' ,'':''})
   const [status, setStatus] = useState('')
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   let formData = new FormData()
-  //   formData.append('file', image.data)
-  //   const response = await fetch('http://localhost:5000/image', {
-  //     method: 'POST',
-  //     body: formData,
-  //   })
-  //   if (response) setStatus(response.statusText)
-  // }
+
 
   const handleFileChange = (e) => {
     const img = {
@@ -58,6 +49,7 @@ const Registration = (data)=>{
           
     const submitHandler= (event)=>{
       event.preventDefault();
+      navigate('/login');
     
         if(params.id){
             let registrationData ={firstname:firstname,lastname:lastname,phoneno:phoneno,email:email}
@@ -113,6 +105,7 @@ const Registration = (data)=>{
                 getlastname(response.data.message.lastname)
                 getphoneno(response.data.message.phoneno)
                 getemail(response.data.message.email)
+                getimage(response.data.file)
             })
         }
     },[])
@@ -139,7 +132,7 @@ const Registration = (data)=>{
           <input type="text" placeholder="Phone No" value={phoneno} onChange={phonenoHanadler}/>
         </div>
         <div class="input-box">
-        {image.preview && <img src={image.preview} width='100' height='100' />}
+        {image.preview && <img id='preview'src={image.preview} width='100' height='100' />}
       <hr></hr>
         <input type='file' name='file' onChange={handleFileChange}></input>
         </div>

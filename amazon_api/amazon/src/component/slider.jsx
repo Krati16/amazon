@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/slider.css';
+import '../css/slider.css'
 const Slider = ()=>{
     const navigate = useNavigate();
     let images =['images/img1.jpg','images/img2.jpg','images/img3.jpeg']
@@ -12,11 +12,14 @@ const Slider = ()=>{
         }else{
             imageno++;
         }
-        setTimeout(changeSlide,2000)
+
     }
     
+
     useEffect(()=>{
         changeSlide();
+        setTimeout(changeSlide,5000)
+        return () => clearInterval(imageno); // Clean up interval on unmount
     },[])
     return(
         <>

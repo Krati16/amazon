@@ -2,25 +2,22 @@ import axios from 'axios'
 import '../css/userlist.css'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
-let originalString = 'path+user.image';
-let newString = originalString.replace("images", "null");
-console.log(newString); // Output: "Hello, there!"
-   
-  
-const Userlist = ()=>{
+    const Userlist = ()=>{
     const [userdata, setuserdata] = useState('');
     const navigate = useNavigate();
     const [path,getpath] = useState('http://localhost:8585/');
-   
+    
 
-    const getalluserData = ()=>{
-        axios.get("http://localhost:8585/users/userlist").then((response)=>{
+     const getalluserData = async()=>{
+        await axios.get("http://localhost:8585/users/userlist").then((response)=>{
+    
             setuserdata(response.data.message)
         })
     }
+    
     useEffect(()=>{
         getalluserData();
+        
     },[])
     const handleDelete = (userId)=>{
         axios.delete('http://localhost:8585/users/deleteuser/${userId}').then((response)=>{
@@ -41,7 +38,8 @@ const Userlist = ()=>{
                         <td>{user.firstname}</td>
                         <td>{user.lastname}</td>
                         <td>{user.email}</td>
-                        <td><img src={path+user.image} height={100} width={100}/></td>
+                        <td><img id='imglist'src={path+user.image.replace('\public','')}/></td>
+                    
                         
                         <td>
                             <input type='button' value="Delete" onClick={()=>{handleDelete(user._id)}}/>

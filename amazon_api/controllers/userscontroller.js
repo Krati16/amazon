@@ -97,7 +97,6 @@ exports.updateuser = async(request,response) =>{
     const result = await users.findByIdAndUpdate(request.params.id,registrationData)
     response.send(JSON.stringify({'error':'','message':'User updated sucessfully'}))
 
-
 }
 
 const storage = multer.diskStorage({
